@@ -83,7 +83,7 @@ public class testSoftline {
         System.out.println("----");*/
     }
 
-
+    //Выполнение запроса с указанием команды и параметров
     private static String executeRequest(String command, String attributes) {
         request = new HttpGet(uri + command + access + attributes);
         String responseString = "";
@@ -92,7 +92,6 @@ public class testSoftline {
             reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
             String line = "";
             while ((line = reader.readLine()) != null) {
-                //System.out.println(line);
                 responseString = line;
             }
         } catch (IOException ex) {
